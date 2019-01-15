@@ -28,7 +28,7 @@ module.exports = function (sequelize, Sequelize){
 		timestamps: false
 
 	});
-	DetalleVenta.associate = funtion(models) {
+	DetalleVenta.associate = function(models) {
 		models.detalleVenta.hasMany(models.venta,{
 			foreignKey: 'id_persona'
 		});
