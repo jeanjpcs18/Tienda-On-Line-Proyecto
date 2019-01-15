@@ -26,7 +26,7 @@ module.exports = function (sequelize, Sequelize) {
             type: Sequelize.DOUBLE
         }
     }, {
-        freezeTableName: true,
+            freezeTableName: true,
             createdAt: 'fecha_registro',
             updatedAt: 'fecha_modificacion'
         });
