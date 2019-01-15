@@ -28,7 +28,7 @@ module.exports = function (sequelize, Sequelize) {
     }
 
     Producto.belongsTo(Categoria, {
-        foreignKey: 'id_persona',
+        foreignKey: 'id_producto',
         constraints: false
     });
         
