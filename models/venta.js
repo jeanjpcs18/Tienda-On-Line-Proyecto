@@ -10,31 +10,37 @@ module.exports = function (sequelize, Sequelize) {
         external_id: {
             type: Sequelize.UUID
         },
-        fecha:{
+        fecha: {
             type: Sequelize.DATE
         },
-        subtotal:{
+        subtotal: {
             type: Sequelize.DOUBLE
         },
-        iva:{
+        iva: {
             type: Sequelize.DOUBLE
         },
-        total:{
+        total: {
             type: Sequelize.DOUBLE
         },
-        costoEnvio:{
+        costoEnvio: {
             type: Sequelize.DOUBLE
         }
-    }, {freezeTableName: true,
-        createdAt: 'fecha_registro',
-        updatedAt: 'fecha_modificacion'
+    }, {
+        freezeTableName: true,
+            createdAt: 'fecha_registro',
+            updatedAt: 'fecha_modificacion'
         });
-        
+    Venta.associate = function (models) {
+        models.venta.hasOne(models.direccionVenta, {
+            foreignKey: 'id_direccionVenta'
+        });
+    }
     Venta.belongsTo(Persona, {
         foreignKey: 'id_persona',
         constraints: false
     });
-        
+
+
     return Venta;
 };
 
