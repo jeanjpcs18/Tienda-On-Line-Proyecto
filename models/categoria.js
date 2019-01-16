@@ -6,7 +6,7 @@ module.exports = function (sequelize, Sequelize) {
             type: Sequelize.INTEGER
         },
         nombreCat: {
-            type: Sequelize.STRING(255)
+            type: Sequelize.STRING(250)
         }
     }, {freezeTableName: true, timestamps: false});
     Categoria.associate = function (models) {
