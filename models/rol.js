@@ -6,7 +6,7 @@ module.exports = function (sequelize, Sequelize) {
             type: Sequelize.INTEGER
         },
         nombre: {
-            type: Sequelize.STRING(20)
+            type: Sequelize.STRING(50)
         }
     }, {
         freezeTableName: true, 
