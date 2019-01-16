@@ -1,4 +1,7 @@
 module.exports = function (sequelize, Sequelize) {
+    var venta = require('../models/rol');
+    var Venta = new venta(sequelize, Sequelize);
+
     var DireccionVenta = sequelize.define('direccionVenta', {
         id: {
             autoIncrement: true,

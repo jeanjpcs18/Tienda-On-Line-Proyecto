@@ -6,7 +6,7 @@ module.exports = function (sequelize, Sequelize){
 	var DetalleVenta = sequelize.define('detalleVenta', {
 		id: { 
 			autoIncrement: true,
-			primaryKey: tru,
+			primaryKey: true,
 			type: Sequelize.INTEGER
 
 		},
