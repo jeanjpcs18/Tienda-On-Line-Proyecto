@@ -1,4 +1,5 @@
 module.exports = function (sequelize, Sequelize) {
+    
     var Rol = sequelize.define('rol', {
         id: {
             autoIncrement: true,
