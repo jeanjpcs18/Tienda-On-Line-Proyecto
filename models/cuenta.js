@@ -21,7 +21,7 @@ module.exports = function (sequelize, Sequelize) {
             unique: true
         },
         clave: {
-            type: Sequelize.STRING(30)
+            type: Sequelize.STRING(50)
         }
     }, {
         freezeTableName: true,

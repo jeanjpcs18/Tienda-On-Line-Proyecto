@@ -9,7 +9,7 @@ module.exports =  function (sequelize, Sequelize){
 			type: Sequelize.INTEGER
 		},
 		metodoPago: {
-			type: Sequelize.STRING(40)
+			type: Sequelize.STRING(100)
 		},
 		external_id: {
 			type: Sequelize.UUID
