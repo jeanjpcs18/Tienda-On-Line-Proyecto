@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/registra', function(req, res, next) {
+router.get('/admin', function(req, res, next) {
   res.render('registra', { title: 'Registro' });
 });
 
