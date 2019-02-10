@@ -1,5 +1,661 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  // Header Section
+  header#header-section.header-section
+      // Top Header
+            
+      // Logo Block /-
+      // Menu Block
+      .menu-block
+        .container
+          .row
+            // col-md-8
+            nav.navbar.navbar-default.col-md-8
+              // Brand and toggle get grouped for better mobile display
+              .navbar-header
+                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+                  span.sr-only Loja Limpia
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  span.icon-bar
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  span.icon-bar
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  span.icon-bar
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a(title='Logo', href='index-2.html')
+                  img(alt='logo', src='static/images/responsive-logo.png')
+              // Collect the nav links, forms, and other content for toggling
+              #bs-example-navbar-collapse-1.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                  li.dropdown.active
+                    a.dropdown-toggle(title='Home', href='index.html') Inicio
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    a(title='About', href='acercade/index.html') Acerca de
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    a(title='Servicios', href='servicios/index.html') Registrarse
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    a(title='Noticias', href='noticias/index.html') Inicio de sesion
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    a(title='Productos', href='productos/index.html') Productos
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    a(title='Search', href='#')
+                      i.fa.fa-search
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    #sb-search.sb-search
+                      form(method='get', action='https://lojalimpia.com/productos/buscar/')
+                        input#search.sb-search-input(placeholder='Busca aquí tu producto...', type='text', value='', name='producto')
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        button.sb-search-submit
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        span.sb-icon-search
+              // /.navbar-collapse
+            // col-md-8 /-
+        // /.container
+      // Menu Block /-
+    // Header Section /-
+  // Slider Section
+  #slider-section.slider-section
+      #make-clean-slider.carousel.slide(data-ride='carousel')
+        // Indicators
+        ol.carousel-indicators
+          li.active(data-target='#make-clean-slider', data-slide-to='0')
+          | &#x9;&#x9;&#x9;&#x9;
+          li(data-target='#make-clean-slider', data-slide-to='1')
+          | &#x9;&#x9;&#x9;&#x9;
+          li(data-target='#make-clean-slider', data-slide-to='2')
+        | &#x9;&#x9;&#x9;
+        .carousel-inner(role='listbox')
+          .item.active
+            img(src='static/images/slider/slide-1.jpg', alt='slide 1')
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            .carousel-caption
+              .container
+                .col-md-6
+                  h3 Ecuentra lo que estas buscando
+          | &#x9;&#x9;&#x9;&#x9;
+          .item
+            img(src='static/images/slider/slide-2.png', alt='slide 2')
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            .carousel-caption
+              .container
+                .col-md-6
+                  h3 Todos tus sueños son importantes
+          | &#x9;&#x9;&#x9;&#x9;
+          .item
+            img(src='static/images/slider/slide-3.jpg', alt='slide 3')
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            .carousel-caption
+              .container
+                .col-md-6
+                  h3 Los mejores productos
+        // Controls
+        a.left.carousel-control(title='Slider Control', href='#make-clean-slider', role='button', data-slide='prev')
+          span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+          | &#x9;&#x9;&#x9;&#x9;
+          span.sr-only Anterior
+        | &#x9;&#x9;&#x9;
+        a.right.carousel-control(title='Slider Control', href='#make-clean-slider', role='button', data-slide='next')
+          span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+          | &#x9;&#x9;&#x9;&#x9;
+          span.sr-only Siguiente
+      | &#x9;&#x9;
+      .container
+        form#quick-contact.contact-form.col-md-4(action='https://lojalimpia.com/contacto/', method='post')
+          input(type='hidden', name='csrfmiddlewaretoken', value='KP7vYWEZt3FBHaTtBIyabPV3WwaPImlBkUjwtgFphBKqh421rk0vwjeT4hB93R1w')
+          | &#x9;&#x9;&#x9;&#x9;
+  // Product Section
+  #product-section.product-section
+      // container
+      .container
+        // col-md-3
+        .col-md-3.col-sm-4.product-sidebar
+          aside.widget.service-category-widget
+            h3 Lista de Categor&iacute;as
+            |         
+            ul
+              li
+                i.fa.fa-long-arrow-right
+                a(title='Tecnologia', href='1/aseo-personal/index.html') Tecnologia
+              |           
+              |           
+              li
+                i.fa.fa-long-arrow-right
+                a(title='Electrodomesticos', href='2/oficinas/index.html') Electrodomesticos
+              |           
+              |           
+              li
+                i.fa.fa-long-arrow-right
+                a(title='Zapatos', href='3/escobas/index.html') Zapatos
+              |           
+              |           
+              li
+                i.fa.fa-long-arrow-right
+                a(title='Ropa', href='4/dispensadores/index.html') Ropa
+              |           
+              |           
+              li
+                i.fa.fa-long-arrow-right
+                a(title='Articulos de impieza', href='5/limpieza-de-pisos/index.html') Articulos de limpieza
+              |           
+              |           
+              li
+                i.fa.fa-long-arrow-right
+                a(title='Joyeria y relojes', href='6/limpieza-de-vidrios/index.html') Joyeria y relojes
+              |           
+              |           
+              li
+                i.fa.fa-long-arrow-right
+                a(title='Deportes y ocio', href='7/coches/index.html') Deportes y ocio
+              |           
+              |           
+              li
+                i.fa.fa-long-arrow-right
+                a(title='Telefonia', href='8/utensilios-de-limpieza/index.html') Telefonia
+              |           
+              |           
+              li
+                i.fa.fa-long-arrow-right
+                a(title='Informatica', href='9/panos-multiuso/index.html') Informatica
+              |           
+              |           
+              li
+                i.fa.fa-long-arrow-right
+                a(title='Bricolage', href='11/productos-quimicos/index.html') Bricolage
+          //
+            <aside class="widget price-filter-widget">
+            <h3>Price Filter</h3>
+            <div id="slider-range"></div>
+            <a href="#" class="filter">Filter</a>
+            <div class="price-input">
+            <label>Price:</label>
+            <span id="amount"></span>
+            <label> - </label>
+            <span id="amount2"></span>
+            </div>
+            </aside>
+          aside.widget.add-widget
+            .fb-page(data-href='https://www.facebook.com/luisnegron/', data-tabs='timeline', data-small-header='false', data-adapt-container-width='true', data-hide-cover='false', data-show-facepile='true')
+              blockquote.fb-xfbml-parse-ignore(cite='https://www.facebook.com/luisnegron/')
+                a(href='https://www.facebook.com/luisnegron/') Tienda Online
+        // col-md-3 /-
+        // col-md-9
+        .col-md-9.col-sm-8
+          h3 Busca tu producto
+          |       
+          form.search(method='get', action='https://lojalimpia.com/productos/buscar/', role='search')
+            .row
+              .col-md-9.col-sm-6
+                input#s.form-control(type='text', required='', placeholder='Encuéntralo aquí...', name='producto')
+              |           
+              .col-md-3.col-sm-6
+                button.btn(type='submit') Buscar
+          |       
+          ul.product-main.row
+            li.col-md-4.col-sm-6.col-xs-6
+              .product-box.portfolio-image-block
+                .zoom-link
+                  a(title='Desempolvador de pisos --- $ 10,00', href='../media/productos/desempolvador_de_pisos.jpg')
+                    img(src='../media/productos/desempolvador_de_pisos.jpg.270x224_q85_box-0%2c0%2c500%2c415_crop_detail.jpg', alt='product')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .product-hover
+                      //
+                        <span class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        </span>
+                      ul
+                        li Ver
+                  |               
+                  .product-detail
+                    a.product-title(href='../media/productos/desempolvador_de_pisos.jpg') Desempolvador de pisos
+                    |                 
+                    p(style='height:70px!important')
+                      | Mopa industrial de polvo. Fabricada con algod&oacute;n combinado con hilo sint&eacute;tico..[..]
+                    |                 
+                    span
+                      span.price $ 10,00
+                      |                 
+                      p.btn.pull-right(href='#') Ver
+            |         
+            |         
+            li.col-md-4.col-sm-6.col-xs-6
+              .product-box.portfolio-image-block
+                .zoom-link
+                  a(title='Dispensador de acero inoxidable --- $ 15,00', href='../media/productos/Dispensador_acero_inoxidable.jpg')
+                    img(src='../media/productos/Dispensador_acero_inoxidable.jpg.270x224_q85_box-0%2c0%2c270%2c224_crop_detail.jpg', alt='product')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .product-hover
+                      //
+                        <span class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        </span>
+                      ul
+                        li Ver
+                  |               
+                  .product-detail
+                    a.product-title(href='../media/productos/Dispensador_acero_inoxidable.jpg') Dispensador de acero inoxidable
+                    |                 
+                    p(style='height:70px!important') Dispensador de acero inoxidable disponible.[..]
+                    |                 
+                    span
+                      span.price $ 15,00
+                      |                 
+                      p.btn.pull-right(href='#') Ver
+            |         
+            |         
+            li.col-md-4.col-sm-6.col-xs-6
+              .product-box.portfolio-image-block
+                .zoom-link
+                  a(title='Dispensador automático --- $ 10,00', href='../media/productos/Dispensador_automatico.jpg')
+                    img(src='../media/productos/Dispensador_automatico.jpg.270x224_q85_box-0%2c0%2c270%2c224_crop_detail.jpg', alt='product')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .product-hover
+                      //
+                        <span class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        </span>
+                      ul
+                        li Ver
+                  |               
+                  .product-detail
+                    a.product-title(href='../media/productos/Dispensador_automatico.jpg') Dispensador autom&aacute;tico
+                    |                 
+                    p(style='height:70px!important') Dispensador autom&aacute;tico de jab&oacute;n l&iacute;quido de 1200 ml..[..]
+                    |                 
+                    span
+                      span.price $ 10,00
+                      |                 
+                      p.btn.pull-right(href='#') Ver
+            |         
+            |         
+            li.col-md-4.col-sm-6.col-xs-6
+              .product-box.portfolio-image-block
+                .zoom-link
+                  a(title='Dispensador automático --- $ 6,00', href='../media/productos/Dispensador_automatic.jpg')
+                    img(src='../media/productos/Dispensador_automatic.jpg.270x224_q85_box-0%2c0%2c270%2c224_crop_detail.jpg', alt='product')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .product-hover
+                      //
+                        <span class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        </span>
+                      ul
+                        li Ver
+                  |               
+                  .product-detail
+                    a.product-title(href='../media/productos/Dispensador_automatic.jpg') Dispensador autom&aacute;tico
+                    |                 
+                    p(style='height:70px!important') Dispensador autom&aacute;tico blanco 245mm x 85mm x 85mm.[..]
+                    |                 
+                    span
+                      span.price $ 6,00
+                      |                 
+                      p.btn.pull-right(href='#') Ver
+            |         
+            |         
+            li.col-md-4.col-sm-6.col-xs-6
+              .product-box.portfolio-image-block
+                .zoom-link
+                  a(title='Dispensador clásico --- $ 10,00', href='../media/productos/Dispensador_clasico.jpg')
+                    img(src='../media/productos/Dispensador_clasico.jpg.270x224_q85_box-0%2c0%2c270%2c224_crop_detail.jpg', alt='product')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .product-hover
+                      //
+                        <span class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        </span>
+                      ul
+                        li Ver
+                  |               
+                  .product-detail
+                    a.product-title(href='../media/productos/Dispensador_clasico.jpg') Dispensador cl&aacute;sico
+                    |                 
+                    p(style='height:70px!important') Dispensador de jab&oacute;n l&iacute;quiso blanco 700ml..[..]
+                    |                 
+                    span
+                      span.price $ 10,00
+                      |                 
+                      p.btn.pull-right(href='#') Ver
+            |         
+            |         
+            li.col-md-4.col-sm-6.col-xs-6
+              .product-box.portfolio-image-block
+                .zoom-link
+                  a(title='Dispensador de Limpión --- $ 10,00', href='../media/productos/Dispensador_de_Limpion.jpg')
+                    img(src='../media/productos/Dispensador_de_Limpion.jpg.270x224_q85_box-0%2c0%2c270%2c224_crop_detail.jpg', alt='product')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .product-hover
+                      //
+                        <span class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        </span>
+                      ul
+                        li Ver
+                  |               
+                  .product-detail
+                    a.product-title(href='../media/productos/Dispensador_de_Limpion.jpg') Dispensador de Limpi&oacute;n
+                    |                 
+                    p(style='height:70px!important')
+                      | Mantiene sus manos libres de g&eacute;rmenes. Rollos hasta de 272 metros, color negro..[..]
+                    |                 
+                    span
+                      span.price $ 10,00
+                      |                 
+                      p.btn.pull-right(href='#') Ver
+            |         
+            |         
+            li.col-md-4.col-sm-6.col-xs-6
+              .product-box.portfolio-image-block
+                .zoom-link
+                  a(title='Dispensador de Lujo --- $ 15,00', href='../media/productos/Dispensador_de_Lujo.jpg')
+                    img(src='../media/productos/Dispensador_de_Lujo.jpg.270x224_q85_box-0%2c0%2c270%2c224_crop_detail.jpg', alt='product')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .product-hover
+                      //
+                        <span class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        </span>
+                      ul
+                        li Ver
+                  |               
+                  .product-detail
+                    a.product-title(href='../media/productos/Dispensador_de_Lujo.jpg') Dispensador de Lujo
+                    |                 
+                    p(style='height:70px!important') Disponble en colores negro y blanco. Material de calidad..[..]
+                    |                 
+                    span
+                      span.price $ 15,00
+                      |                 
+                      p.btn.pull-right(href='#') Ver
+            |         
+            |         
+            li.col-md-4.col-sm-6.col-xs-6
+              .product-box.portfolio-image-block
+                .zoom-link
+                  a(title='Dispensador de Lujo --- $ 15,50', href='../media/productos/Dispensador_de_Lujo2.jpg')
+                    img(src='../media/productos/Dispensador_de_Lujo2.jpg.270x224_q85_box-0%2c0%2c270%2c224_crop_detail.jpg', alt='product')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .product-hover
+                      //
+                        <span class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        </span>
+                      ul
+                        li Ver
+                  |               
+                  .product-detail
+                    a.product-title(href='../media/productos/Dispensador_de_Lujo2.jpg') Dispensador de Lujo
+                    |                 
+                    p(style='height:70px!important')
+                      | Dise&ntilde;o elegante para el sector hotelero, gastron&oacute;mico, est&eacute;tico y empresarial 44.[..]
+                    |                 
+                    span
+                      span.price $ 15,50
+                      |                 
+                      p.btn.pull-right(href='#') Ver
+            |         
+            |         
+            li.col-md-4.col-sm-6.col-xs-6
+              .product-box.portfolio-image-block
+                .zoom-link
+                  a(title='Dispensador elipse --- $ 10,00', href='../media/productos/Dispensador_Elipse.jpg')
+                    img(src='../media/productos/Dispensador_Elipse.jpg.270x224_q85_box-0%2c0%2c270%2c224_crop_detail.jpg', alt='product')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .product-hover
+                      //
+                        <span class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        </span>
+                      ul
+                        li Ver
+                  |               
+                  .product-detail
+                    a.product-title(href='../media/productos/Dispensador_Elipse.jpg') Dispensador elipse
+                    |                 
+                    p(style='height:70px!important') Rollos hasta de 312 metros, color disponible: Blanco..[..]
+                    |                 
+                    span
+                      span.price $ 10,00
+                      |                 
+                      p.btn.pull-right(href='#') Ver
+            |         
+            |         
+            li.col-md-4.col-sm-6.col-xs-6
+              .product-box.portfolio-image-block
+                .zoom-link
+                  a(title='Dispensador especial --- $ 10,00', href='../media/productos/Dispensador_especial.jpg')
+                    img(src='../media/productos/Dispensador_especial.jpg.270x224_q85_box-0%2c0%2c270%2c224_crop_detail.jpg', alt='product')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .product-hover
+                      //
+                        <span class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        </span>
+                      ul
+                        li Ver
+                  |               
+                  .product-detail
+                    a.product-title(href='../media/productos/Dispensador_especial.jpg') Dispensador especial
+                    |                 
+                    p(style='height:70px!important') Color Blanco en tama&ntilde;o 245mm x 85mm x 85mm.[..]
+                    |                 
+                    span
+                      span.price $ 10,00
+                      |                 
+                      p.btn.pull-right(href='#') Ver
+            |         
+            |         
+            li.col-md-4.col-sm-6.col-xs-6
+              .product-box.portfolio-image-block
+                .zoom-link
+                  a(title='Dispensador LCD --- $ 10,00', href='../media/productos/Dispensador_LCD.jpg')
+                    img(src='../media/productos/Dispensador_LCD.jpg.270x224_q85_box-0%2c0%2c270%2c224_crop_detail.jpg', alt='product')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .product-hover
+                      //
+                        <span class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        </span>
+                      ul
+                        li Ver
+                  |               
+                  .product-detail
+                    a.product-title(href='../media/productos/Dispensador_LCD.jpg') Dispensador LCD
+                    |                 
+                    p(style='height:70px!important') Disponible en color Blanco 245mm x 85mm x 85mm..[..]
+                    |                 
+                    span
+                      span.price $ 10,00
+                      |                 
+                      p.btn.pull-right(href='#') Ver
+            |         
+            |         
+            li.col-md-4.col-sm-6.col-xs-6
+              .product-box.portfolio-image-block
+                .zoom-link
+                  a(title='Dispensador natural azul --- $ 10,00', href='../media/productos/Dispensador_natural_azul.jpg')
+                    img(src='../media/productos/Dispensador_natural_azul.jpg.270x224_q85_box-0%2c0%2c270%2c224_crop_detail.jpg', alt='product')
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    .product-hover
+                      //
+                        <span class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        </span>
+                      ul
+                        li Ver
+                  |               
+                  .product-detail
+                    a.product-title(href='../media/productos/Dispensador_natural_azul.jpg') Dispensador natural azul
+                    |                 
+                    p(style='height:70px!important') Rollos hasta de 297 metros color blanco con azul-.[..]
+                    |                 
+                    span
+                      span.price $ 10,00
+                      |                 
+                      p.btn.pull-right(href='#') Ver
+          |       
+          |       
+          .pull-left
+            span Resultados : 1-12 de 46.
+          |       
+          .pull-right
+            ul.pagination
+              li.disabled
+                span &laquo;
+              |           
+              |           
+              |             
+              |               
+              li.active
+                span
+                  | 1 
+                  span.sr-only (current)
+              |             
+              |           
+              |             
+              |               
+              li
+                a(href='index4658.html?page=2') 2
+              |             
+              |           
+              |             
+              |               
+              li
+                a(href='index9ba9.html?page=3') 3
+              |             
+              |           
+              |             
+              |               
+              li
+                a(href='indexfdb0.html?page=4') 4
+              |             
+              |           
+              |           
+              |             
+              li
+                a(href='index4658.html?page=2', aria-label='Next') &raquo;
+        // col-md-9 /-
+      // container /-
+    // Product Section /-
+    // Slider Section /-
+  // Footer Section
+  footer#footer-section.footer-section.ow-background
+      // container
+      .container
+        .footer-heading
+          h5 S&iacute;guenos en FACEBOOK!
+          br
+          | &#x9;&#x9;&#x9;&#x9;
+          h4
+            a(href='https://www.facebook.com/luisnegron/', style='color:#feee00;', target='_blank')
+              i.fab.fa-facebook-square
+              | &nbsp; Tienda Online
+        | &#x9;&#x9;&#x9;
+        .text-center
+          h2 Estamos a su servicio
+        // Footer Bottom
+        .footer-bottom
+          p
+            | Desarrollado por 
+            a(style='color:#feee00;', href='#', target='_blank') luis
+            | . Todos los derechos reservados.
+        // Footer Bottom /-
+      // container /-
+    // Footer Section /-
+
+  // jQuery Include
+  script(src='static/libraries/jquery.min.js')
+    | &#x9;
+    script(src='static/libraries/jquery.easing.min.js')
+    // Easing Animation Effect
+    script(src='static/libraries/bootstrap/bootstrap.min.js')
+    // Core Bootstrap v3.3.4
+    script(type='text/javascript', src='https://maps.google.com/maps/api/js?sensor=false')
+    | &#x9;
+    script(src='static/libraries/gmap/jquery.gmap.min.js')
+    // Light Box
+    script(src='static/libraries/fuelux/jquery-ui.min.js')
+    // Price Filter
+    script(src='static/libraries/jquery.animateNumber.min.js')
+    // Used for Animated Numbers
+    script(src='static/libraries/jquery.appear.js')
+    // It Loads jQuery when element is appears
+    script(src='static/libraries/jquery.knob.js')
+    // Used for Loading Circle
+    script(src='static/libraries/wow.min.js')
+    // Use For Animation
+    script(src='static/libraries/owl-carousel/owl.carousel.min.js')
+    // Core Owl Carousel CSS File  *	v1.3.3
+    script(src='static/libraries/portfolio-filter/jquery.quicksand.js')
+    // Portfolio Filter
+    script(src='static/libraries/expanding-search/modernizr.custom.js')
+    // Core Owl Carousel CSS File  *	v1.3.3
+    script(src='static/libraries/flexslider/jquery.flexslider-min.js')
+    // flexslider
+    script(src='static/libraries/jquery.magnific-popup.min.js')
+    // Light Box
+    script(src='static/libraries/expanding-search/modernizr.custom.js')
+    // Core Owl Carousel CSS File  *	v1.3.3
+    script(src='static/libraries/expanding-search/classie.js')
+    | &#x9;
+    script(src='static/libraries/expanding-search/uisearch.js')
+    | &#x9;
+    script.
+      new UISearch(document.getElementById('sb-search'));
+    // Customized Scripts
+    script(src='static/js/functions.js')
+
+
