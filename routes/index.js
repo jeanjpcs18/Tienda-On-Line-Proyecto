@@ -11,4 +11,7 @@ router.get('/registra', function(req, res, next) {
   res.render('registra', { title: 'Registro' });
 });
 
+router.get('/reg', function(req, res, next){
+  res.render('login', {title: 'Login', fragmento: 'fragmentos/frm_login'});
+});
 module.exports = router;
