@@ -1,16 +1,24 @@
 div(id="content")
-    form(action="")
-        .textbox
-            i(class="fas fa-user")
-            input(type="text" placeholder="username" required="required")
-        .textbox
-            i(class="fas fa-lock")
-            input(type="password" placeholder="password" required="required")
-        font(style="vertical-align: inherit;")
-            font(style="vertical-align: inherit;")
-            input(type="submit" class="btn" value="Iniciar sesion")
-        font(style="vertical-align: inherit;")
-            font(style="vertical-align: inherit;")
-        a(href="/admin") Registrate
-        
-        
+    form(class="login-100-form validate-form")
+    
+        div(class="text-center p-t-55 p-b-30")
+            span(class="txt1") login with email
+        div(class="wrap-input100 validate-input m-b-16" data-validate="Please enter email: ex@abc.xyz")
+            input(class="input100" type="email" name="email" placeholder="Email")
+            span(class="focus-input100")
+        div(class="wrap-input100 validate-input m-b-20" data-validate="Please enter the password")
+            span(class="btn-show-pass")
+                i(class="fa fa fa-eye")
+            input(class="input100" type="password" name="password" placeholder="Password")
+            span(class="focus-input100")
+        div(class="container-login100-form-btn")
+            button(class="login100-form-btn") Login
+        div(class="flex-col-c p-t-224")
+            span(class="tx2 p-b-10") No tienes una cuenta
+            a(href="/sign_up" class="txt3 bo1 hov1") registrate
+            
+            
+            
+
+            
+                

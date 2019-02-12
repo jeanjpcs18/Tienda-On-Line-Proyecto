@@ -4,12 +4,15 @@ var createError = require('http-errors');
 var bodyParser=require('body-parser');
 
 var express = require('express');
+var flash = require('connect-flash');
+var session = require('express-session');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var passport=require('passport');
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true}));
@@ -27,12 +30,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+
+app.use(session({
+    secret: 'I Love Software...',
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(flash()); // use connect-flash for flash messages stored in session
+app.use(passport.initialize()); 
+app.use(passport.session());
+
 //modelos
 var models= require('./models');
 models.sequelize.sync().then( ()=> {
 	console.log('Se ha conectado la base');
 }).catch(err => {console.log(err, "Hubo un error");});
 
+require('./config/pasaporte/passport')(passport, models.cuenta, models.persona, models.rol);
 
 
 // catch 404 and forward to error handler
