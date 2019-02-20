@@ -4,7 +4,7 @@ var createError = require('http-errors');
 var bodyParser=require('body-parser');
 
 var express = require('express');
-var flash = require('connect-flash');
+var flash = require('express-flash');
 var session = require('express-session');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -17,6 +17,18 @@ var passport=require('passport');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
+
+
+
+app.use(session({
+  secret: 'I Love Software...',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(flash()); // use connect-flash for flash messages stored in session
+app.use(passport.initialize()); 
+app.use(passport.session());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -31,14 +43,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
-app.use(session({
-    secret: 'I Love Software...',
-    resave: true,
-    saveUninitialized: true
-}));
-app.use(flash()); // use connect-flash for flash messages stored in session
-app.use(passport.initialize()); 
-app.use(passport.session());
 
 //modelos
 var models= require('./models');

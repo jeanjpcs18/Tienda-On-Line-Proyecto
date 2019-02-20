@@ -17,5 +17,17 @@ router.get('/admin', function(req, res, next) {
 router.get('/login', cuentaController.verLogin);
 router.get('/sign_up', cuentaController.verRegistro);
 
+router.post('/login/iniciar', passport.authenticate('local-signin', {
+  successRedirect: '/',
+  failureRedirect: '/login',
+  failureFlash: true
+}));
+
+
+router.post('/sign_up/save', passport.authenticate('local-signup', {
+  successRedirect: '/login',
+  failureRedirect: '/sign_up'
+}));
+
 
 module.exports = router;
