@@ -49,200 +49,202 @@ html(lang='en')
                         a(class='carousel-control-next' href='#carouselExampleIndicators' role='button' data-slide='next')
                             span(class='carousel-control-next-icon' aria-hidden='true')
                             span(class='sr-only') Next
-        .container
-            h1(class='my-4') Administracion de la tienda
-            .list-group 
-                #accordionExample(class='accordion')
-                    .card
-                        #headingOne(class='card-header')
-                            button(class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapseOne' aria-expanded='false' aria-controls='collapseOne') Productos
-                        #collapseOne(class='collapse' aria-labelledby='headingOne' data-parent='#accordionExample')
-                            .card-body 
-                                .container
-                                    .row
-                                        .col-lg-5
-                                            h1(class='my-4') + Nuevo Producto
-                                            .list-group
-                                                .form(class='form-group' action="") 
-                                                    .br.label(for='formGroupExampleInput') Codigo del producto
-                                                        input(type='text' class='form-control' id='codigoP' placeholder='Codigo')
-                                                    .br.label(for='formGroupExampleInput') Nombre del producto
-                                                        input(type='text' class='form-control' id='nombreP' placeholder='Nombre')              
-                                                    .br.label(for='exampleFormControlSelect1') Proveedor del producto
-                                                        select(class='form-control' id='exampleFormControlSelect1')
-                                                            option(value="") Toshiba
-                                                            option(value="") Lenovo
-                                                            option(value="") Hp
-                                                    .br.label(for='exampleFormControlSelect1') Categoria del producto
-                                                        select(class='form-control' id='exampleFormControlSelect1')
-                                                            option(value="") Computadoras
-                                                            option(value="") Teclados
-                                                            option(value="") Parlantes
-                                                    .br.label(for='formGroupExampleInput') Precio del producto
-                                                        input(type='text' class='form-control' id='precioP' placeholder='Precio')
-                                                    .br.label(for='formGroupExampleInput') Modelo del producto
-                                                        input(type='text' class='form-control' id='marcaP' placeholder='Marca')
-                                                    .br.label(for='formGroupExampleInput') Marca del producto
-                                                        input(type='text' class='form-control' id='modeloP' placeholder='Modelo')
-                                                    .br.label(for='formGroupExampleInput') Unidad del producto
-                                                        input(type='text' class='form-control' id='unidadP' placeholder='Unidad')
-                                                    .br.label(for='formGroupExampleInput') Elegir imagen
-                                                        input(type='file' class='form-control' id='exampleFormControlFile1' accept='image/*')
-                                            .br.button(type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCenter') Agregar a la tienda
-                                            #exampleModalCenter(class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
-                                                .modal-dialog.modal-dialog-centered(role='document')
-                                                    .modal-content
-                                                        .modal-header   
-                                                            h5(class='modal-title' id='exampleModalCenterTitle') Quiere Realizar la siguiente accion
-                                                            button(type="button" class='close' data-dismiss='modal' aria-label='Close')
-                                                                span(aria-hidden='true')&times;
-                                                        .modal-body
-                                                            p() Si no esta seguro de realizar esta acción de click en cerrar.
-                                                            .br() Caso contrario siga con la accion y de click en guardar. 
-                                                        .modal-footer
-                                                            button(type='button' class='btn btn-secondary' data-dismiss='modal') Cerrar 
-                                                            button(type='button' class='btn btn-primary') Guardar
-                                        .col-lg-5
-                                            h1(class='my-4') - Eliminar Un Producto
-                                            .list-group
-                                                .form(class='form-group' action="") 
-                                                    .br.label(for='formGroupExampleInput') Codigo del producto
-                                                        input(type='text' class='form-control' id='codigo' placeholder='Codigo')
-                                            .br.button(type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCenter') Eliminar
-                                            #exampleModalCenter(class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
-                                                .modal-dialog.modal-dialog-centered(role='document')
-                                                    .modal-content
-                                                        .modal-header   
-                                                            h5(class='modal-title' id='exampleModalCenterTitle') Quiere Realizar la siguiente accion
-                                                            button(type="button" class='close' data-dismiss='modal' aria-label='Close')
-                                                                span(aria-hidden='true')&times;
-                                                        .modal-body
-                                                            p() Si no esta seguro de realizar esta acción de click en cerrar.
-                                                            .br() Caso contrario siga con la accion y de click en guardar. 
-                                                        .modal-footer
-                                                            button(type='button' class='btn btn-secondary' data-dismiss='modal') Cerrar 
-                                                            button(type='button' class='btn btn-primary') Guardar
-                    .card
-                        #headingTwo(class='card-header')
-                            button(class='btn btn-link collapsed' type='button' data-toggle='collapse' data-target='#collapseTwo' aria-expanded='true' aria-controls='collapseTwo') Proveedores
-                        #collapseTwo(class='collapse' aria-labelledby='headingTwo' data-parent='#accordionExample')
-                            .card-body 
-                                .container
-                                    .row
-                                        .col-lg-5
-                                            h1(class='my-4') + Nuevo Proveedor
-                                            .list-group
-                                                .form(class='form-group' action="") 
-                                                    .br.label(for='formGroupExampleInput') Codigo del proveedor
-                                                        input(type='text' class='form-control' id='codigoPr' placeholder='Codigo')
-                                                    .br.label(for='formGroupExampleInput') Nombre del proveedor
-                                                        input(type='text' class='form-control' id='nombrePr' placeholder='Nombre')              
-                                                    .br.label(for='exampleFormControlSelect1') Categoria del proveedor
-                                                        select(class='form-control' id='exampleFormControlSelect1')
-                                                            option(value="") Toshiba
-                                                            option(value="") Lenovo
-                                                            option(value="") Hp
-                                                    .br.label(for='formGroupExampleInput') Direccion del proveedor
-                                                        input(type='text' class='form-control' id='direccionPr' placeholder='Direccion')
-                                            .br.button(type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCenter2') Agregar Proveedor
-                                            #exampleModalCenter2(class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle2' aria-hidden='true')
-                                                .modal-dialog.modal-dialog-centered(role='document')
-                                                    .modal-content
-                                                        .modal-header   
-                                                            h5(class='modal-title' id='exampleModalCenterTitle2') Quiere Realizar la siguiente accion
-                                                            button(type="button" class='close' data-dismiss='modal' aria-label='Close')
-                                                                span(aria-hidden='true')&times;
-                                                        .modal-body
-                                                            p() Si no esta seguro de realizar esta acción de click en cerrar.
-                                                            .br() Caso contrario siga con la accion y de click en guardar. 
-                                                        .modal-footer
-                                                            button(type='button' class='btn btn-secondary' data-dismiss='modal') Cerrar 
-                                                            button(type='button' class='btn btn-primary') Guardar
-                                        .col-lg-5
-                                            h1(class='my-4') - Eliminar Un Proveedor
-                                            .list-group
-                                                .form(class='form-group' action="") 
-                                                    .br.label(for='formGroupExampleInput') Codigo del proveedor
-                                                        input(type='text' class='form-control' id='codigo' placeholder='Codigo')
-                                            .button(type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCenter2') Eliminar Proveedor
-                                            #exampleModalCenter2(class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle2' aria-hidden='true')
-                                                .modal-dialog.modal-dialog-centered(role='document')
-                                                    .modal-content
-                                                        .modal-header   
-                                                            h5(class='modal-title' id='exampleModalCenterTitle2') Quiere Realizar la siguiente accion
-                                                            button(type="button" class='close' data-dismiss='modal' aria-label='Close')
-                                                                span(aria-hidden='true')&times;
-                                                        .modal-body
-                                                            p() Si no esta seguro de realizar esta acción de click en cerrar.
-                                                            .br() Caso contrario siga con la accion y de click en guardar. 
-                                                        .modal-footer
-                                                            button(type='button' class='btn btn-secondary' data-dismiss='modal') Cerrar 
-                                                            button(type='button' class='btn btn-primary') Guardar 
-                    .card
-                        #headingTheree(class='card-header')
-                            button(class='btn btn-link collapsed' type='button' data-toggle='collapse' data-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree') Categorias
-                        #collapseThree(class='collapse' aria-labelledby='headingThree' data-parent='#accordionExample')
-                            .card-body 
-                                .container
-                                    .row
-                                        .col-lg-5
-                                            h1(class='my-4') + Nueva Categoria
-                                            .list-group
-                                                .form(class='form-group' action="") 
-                                                    .br.label(for='formGroupExampleInput') Codigo de la categoria
-                                                        input(type='text' class='form-control' id='codigoC' placeholder='Codigo')
-                                                    .br.label(for='formGroupExampleInput') Nombre de la categoria
-                                                        input(type='text' class='form-control' id='nombreC' placeholder='Nombre')              
-                                                    .br.label(for='formGroupExampleInput') Descripcion de la categoria
-                                                        input(type='text' class='form-control' id='descripcionC' placeholder='Nombre')
-                                            .br.button(type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCenter1') Agregar Categoria
-                                            #exampleModalCenter1(class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle1' aria-hidden='true')
-                                                .modal-dialog.modal-dialog-centered(role='document')
-                                                    .modal-content
-                                                        .modal-header   
-                                                            h5(class='modal-title' id='exampleModalCenterTitle1') Quiere Realizar la siguiente accion
-                                                            button(type="button" class='close' data-dismiss='modal' aria-label='Close')
-                                                                span(aria-hidden='true')&times;
-                                                        .modal-body
-                                                            p() Si no esta seguro de realizar esta acción de click en cerrar.
-                                                            .br() Caso contrario siga con la accion y de click en guardar. 
-                                                        .modal-footer
-                                                            button(type='button' class='btn btn-secondary' data-dismiss='modal') Cerrar 
-                                                            button(type='button' class='btn btn-primary') Guardar
-                                        .col-lg-5
-                                            h1(class='my-4') - Eliminar Una Categoria
-                                            .list-group
-                                                .form(class='form-group' action="") 
-                                                    .br.label(for='formGroupExampleInput') Codigo de la categoria
-                                                        input(type='text' class='form-control' id='codigo' placeholder='Codigo')
-                                            .br.button(type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCenter1') Eliminar Categoria         
-                                            #exampleModalCenter1(class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle1' aria-hidden='true')
-                                                .modal-dialog.modal-dialog-centered(role='document')
-                                                    .modal-content
-                                                        .modal-header   
-                                                            h5(class='modal-title' id='exampleModalCenterTitle1') Quiere Realizar la siguiente accion
-                                                            button(type="button" class='close' data-dismiss='modal' aria-label='Close')
-                                                                span(aria-hidden='true')&times;
-                                                        .modal-body
-                                                            p() Si no esta seguro de realizar esta acción de click en cerrar.
-                                                            .br() Caso contrario siga con la accion y de click en guardar. 
-                                                        .modal-footer
-                                                            button(type='button' class='btn btn-secondary' data-dismiss='modal') Cerrar 
-                                                            button(type='button' class='btn btn-primary') Guardar
-                                .container
-                                    h1(class='my-4') Actualizar categorias.
+        
+        if(rol==='admin')
+            .container
+                h1(class='my-4') Administracion de la tienda
+                .list-group 
+                    #accordionExample(class='accordion')
+                        .card
+                            #headingOne(class='card-header')
+                                button(class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapseOne' aria-expanded='false' aria-controls='collapseOne') Productos
+                            #collapseOne(class='collapse' aria-labelledby='headingOne' data-parent='#accordionExample')
+                                .card-body 
+                                    .container
+                                        .row
+                                            .col-lg-5
+                                                h1(class='my-4') + Nuevo Producto
+                                                .list-group
+                                                    .form(class='form-group' action="") 
+                                                        .br.label(for='formGroupExampleInput') Codigo del producto
+                                                            input(type='text' class='form-control' id='codigoP' placeholder='Codigo')
+                                                        .br.label(for='formGroupExampleInput') Nombre del producto
+                                                            input(type='text' class='form-control' id='nombreP' placeholder='Nombre')              
+                                                        .br.label(for='exampleFormControlSelect1') Proveedor del producto
+                                                            select(class='form-control' id='exampleFormControlSelect1')
+                                                                option(value="") Toshiba
+                                                                option(value="") Lenovo
+                                                                option(value="") Hp
+                                                        .br.label(for='exampleFormControlSelect1') Categoria del producto
+                                                            select(class='form-control' id='exampleFormControlSelect1')
+                                                                option(value="") Computadoras
+                                                                option(value="") Teclados
+                                                                option(value="") Parlantes
+                                                        .br.label(for='formGroupExampleInput') Precio del producto
+                                                            input(type='text' class='form-control' id='precioP' placeholder='Precio')
+                                                        .br.label(for='formGroupExampleInput') Modelo del producto
+                                                            input(type='text' class='form-control' id='marcaP' placeholder='Marca')
+                                                        .br.label(for='formGroupExampleInput') Marca del producto
+                                                            input(type='text' class='form-control' id='modeloP' placeholder='Modelo')
+                                                        .br.label(for='formGroupExampleInput') Unidad del producto
+                                                            input(type='text' class='form-control' id='unidadP' placeholder='Unidad')
+                                                        .br.label(for='formGroupExampleInput') Elegir imagen
+                                                            input(type='file' class='form-control' id='exampleFormControlFile1' accept='image/*')
+                                                .br.button(type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCenter') Agregar a la tienda
+                                                #exampleModalCenter(class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+                                                    .modal-dialog.modal-dialog-centered(role='document')
+                                                        .modal-content
+                                                            .modal-header   
+                                                                h5(class='modal-title' id='exampleModalCenterTitle') Quiere Realizar la siguiente accion
+                                                                button(type="button" class='close' data-dismiss='modal' aria-label='Close')
+                                                                    span(aria-hidden='true')&times;
+                                                            .modal-body
+                                                                p() Si no esta seguro de realizar esta acción de click en cerrar.
+                                                                .br() Caso contrario siga con la accion y de click en guardar. 
+                                                            .modal-footer
+                                                                button(type='button' class='btn btn-secondary' data-dismiss='modal') Cerrar 
+                                                                button(type='button' class='btn btn-primary') Guardar
+                                            .col-lg-5
+                                                h1(class='my-4') - Eliminar Un Producto
+                                                .list-group
+                                                    .form(class='form-group' action="") 
+                                                        .br.label(for='formGroupExampleInput') Codigo del producto
+                                                            input(type='text' class='form-control' id='codigo' placeholder='Codigo')
+                                                .br.button(type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCenter') Eliminar
+                                                #exampleModalCenter(class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+                                                    .modal-dialog.modal-dialog-centered(role='document')
+                                                        .modal-content
+                                                            .modal-header   
+                                                                h5(class='modal-title' id='exampleModalCenterTitle') Quiere Realizar la siguiente accion
+                                                                button(type="button" class='close' data-dismiss='modal' aria-label='Close')
+                                                                    span(aria-hidden='true')&times;
+                                                            .modal-body
+                                                                p() Si no esta seguro de realizar esta acción de click en cerrar.
+                                                                .br() Caso contrario siga con la accion y de click en guardar. 
+                                                            .modal-footer
+                                                                button(type='button' class='btn btn-secondary' data-dismiss='modal') Cerrar 
+                                                                button(type='button' class='btn btn-primary') Guardar
+                        .card
+                            #headingTwo(class='card-header')
+                                button(class='btn btn-link collapsed' type='button' data-toggle='collapse' data-target='#collapseTwo' aria-expanded='true' aria-controls='collapseTwo') Proveedores
+                            #collapseTwo(class='collapse' aria-labelledby='headingTwo' data-parent='#accordionExample')
+                                .card-body 
+                                    .container
+                                        .row
+                                            .col-lg-5
+                                                h1(class='my-4') + Nuevo Proveedor
+                                                .list-group
+                                                    .form(class='form-group' action="") 
+                                                        .br.label(for='formGroupExampleInput') Codigo del proveedor
+                                                            input(type='text' class='form-control' id='codigoPr' placeholder='Codigo')
+                                                        .br.label(for='formGroupExampleInput') Nombre del proveedor
+                                                            input(type='text' class='form-control' id='nombrePr' placeholder='Nombre')              
+                                                        .br.label(for='exampleFormControlSelect1') Categoria del proveedor
+                                                            select(class='form-control' id='exampleFormControlSelect1')
+                                                                option(value="") Toshiba
+                                                                option(value="") Lenovo
+                                                                option(value="") Hp
+                                                        .br.label(for='formGroupExampleInput') Direccion del proveedor
+                                                            input(type='text' class='form-control' id='direccionPr' placeholder='Direccion')
+                                                .br.button(type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCenter2') Agregar Proveedor
+                                                #exampleModalCenter2(class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle2' aria-hidden='true')
+                                                    .modal-dialog.modal-dialog-centered(role='document')
+                                                        .modal-content
+                                                            .modal-header   
+                                                                h5(class='modal-title' id='exampleModalCenterTitle2') Quiere Realizar la siguiente accion
+                                                                button(type="button" class='close' data-dismiss='modal' aria-label='Close')
+                                                                    span(aria-hidden='true')&times;
+                                                            .modal-body
+                                                                p() Si no esta seguro de realizar esta acción de click en cerrar.
+                                                                .br() Caso contrario siga con la accion y de click en guardar. 
+                                                            .modal-footer
+                                                                button(type='button' class='btn btn-secondary' data-dismiss='modal') Cerrar 
+                                                                button(type='button' class='btn btn-primary') Guardar
+                                            .col-lg-5
+                                                h1(class='my-4') - Eliminar Un Proveedor
+                                                .list-group
+                                                    .form(class='form-group' action="") 
+                                                        .br.label(for='formGroupExampleInput') Codigo del proveedor
+                                                            input(type='text' class='form-control' id='codigo' placeholder='Codigo')
+                                                .button(type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCenter2') Eliminar Proveedor
+                                                #exampleModalCenter2(class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle2' aria-hidden='true')
+                                                    .modal-dialog.modal-dialog-centered(role='document')
+                                                        .modal-content
+                                                            .modal-header   
+                                                                h5(class='modal-title' id='exampleModalCenterTitle2') Quiere Realizar la siguiente accion
+                                                                button(type="button" class='close' data-dismiss='modal' aria-label='Close')
+                                                                    span(aria-hidden='true')&times;
+                                                            .modal-body
+                                                                p() Si no esta seguro de realizar esta acción de click en cerrar.
+                                                                .br() Caso contrario siga con la accion y de click en guardar. 
+                                                            .modal-footer
+                                                                button(type='button' class='btn btn-secondary' data-dismiss='modal') Cerrar 
+                                                                button(type='button' class='btn btn-primary') Guardar 
+                        .card
+                            #headingTheree(class='card-header')
+                                button(class='btn btn-link collapsed' type='button' data-toggle='collapse' data-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree') Categorias
+                            #collapseThree(class='collapse' aria-labelledby='headingThree' data-parent='#accordionExample')
+                                .card-body 
+                                    .container
+                                        .row
+                                            .col-lg-5
+                                                h1(class='my-4') + Nueva Categoria
+                                                .list-group
+                                                    .form(class='form-group' action="") 
+                                                        .br.label(for='formGroupExampleInput') Codigo de la categoria
+                                                            input(type='text' class='form-control' id='codigoC' placeholder='Codigo')
+                                                        .br.label(for='formGroupExampleInput') Nombre de la categoria
+                                                            input(type='text' class='form-control' id='nombreC' placeholder='Nombre')              
+                                                        .br.label(for='formGroupExampleInput') Descripcion de la categoria
+                                                            input(type='text' class='form-control' id='descripcionC' placeholder='Nombre')
+                                                .br.button(type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCenter1') Agregar Categoria
+                                                #exampleModalCenter1(class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle1' aria-hidden='true')
+                                                    .modal-dialog.modal-dialog-centered(role='document')
+                                                        .modal-content
+                                                            .modal-header   
+                                                                h5(class='modal-title' id='exampleModalCenterTitle1') Quiere Realizar la siguiente accion
+                                                                button(type="button" class='close' data-dismiss='modal' aria-label='Close')
+                                                                    span(aria-hidden='true')&times;
+                                                            .modal-body
+                                                                p() Si no esta seguro de realizar esta acción de click en cerrar.
+                                                                .br() Caso contrario siga con la accion y de click en guardar. 
+                                                            .modal-footer
+                                                                button(type='button' class='btn btn-secondary' data-dismiss='modal') Cerrar 
+                                                                button(type='button' class='btn btn-primary') Guardar
+                                            .col-lg-5
+                                                h1(class='my-4') - Eliminar Una Categoria
+                                                .list-group
+                                                    .form(class='form-group' action="") 
+                                                        .br.label(for='formGroupExampleInput') Codigo de la categoria
+                                                            input(type='text' class='form-control' id='codigo' placeholder='Codigo')
+                                                .br.button(type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCenter1') Eliminar Categoria         
+                                                #exampleModalCenter1(class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle1' aria-hidden='true')
+                                                    .modal-dialog.modal-dialog-centered(role='document')
+                                                        .modal-content
+                                                            .modal-header   
+                                                                h5(class='modal-title' id='exampleModalCenterTitle1') Quiere Realizar la siguiente accion
+                                                                button(type="button" class='close' data-dismiss='modal' aria-label='Close')
+                                                                    span(aria-hidden='true')&times;
+                                                            .modal-body
+                                                                p() Si no esta seguro de realizar esta acción de click en cerrar.
+                                                                .br() Caso contrario siga con la accion y de click en guardar. 
+                                                            .modal-footer
+                                                                button(type='button' class='btn btn-secondary' data-dismiss='modal') Cerrar 
+                                                                button(type='button' class='btn btn-primary') Guardar
+                                    .container
+                                        h1(class='my-4') Actualizar categorias.
 
-                                    table(class='table')
-                                        thead
-                                            tr  
-                                                th(scope='col') #
-                                                th(scope='col') Nombre
-                                                th(scope='col') Descripcion
-                                        tbody
-                                            tr  
-                                                th(scope='row') 1
-                                                td() Juan
-                                                td() grsg esryvs
+                                        table(class='table')
+                                            thead
+                                                tr  
+                                                    th(scope='col') #
+                                                    th(scope='col') Nombre
+                                                    th(scope='col') Descripcion
+                                            tbody
+                                                tr  
+                                                    th(scope='row') 1
+                                                    td() Juan
+                                                    td() grsg esryvs
 
 
     footer(class='py-5 bg-dark')
