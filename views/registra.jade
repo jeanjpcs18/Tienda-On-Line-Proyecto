@@ -24,10 +24,13 @@ html(lang='en')
                                 span(class='sr-only')(current)
                         li(class='nav-item')
                             a(class='nav-link' href='#') Productos
-                        li(class='nav-item')
-                            a(class='nav-link' href='#') Administracion
+                        if(rol==='admin')
+                            li(class='nav-item')
+                                a(class='nav-link' href='#') Administracion
                         li(class='nav-item')
                             a(class='nav-link' href='#') Nosotros
+                        li(class='nav-item')
+                            a(class='nav-link' href='/logout') Cerrar session
         .container
             .content-page
                 .hidden-xs.content-carousel
@@ -97,7 +100,7 @@ html(lang='en')
                                                             .modal-header   
                                                                 h5(class='modal-title' id='exampleModalCenterTitle') Quiere Realizar la siguiente accion
                                                                 button(type="button" class='close' data-dismiss='modal' aria-label='Close')
-                                                                    span(aria-hidden='true')&times;
+                                                                    span(aria-hidden='true')&times
                                                             .modal-body
                                                                 p() Si no esta seguro de realizar esta acción de click en cerrar.
                                                                 .br() Caso contrario siga con la accion y de click en guardar. 

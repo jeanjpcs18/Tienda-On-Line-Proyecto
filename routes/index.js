@@ -5,14 +5,20 @@ var cuenta = require('../controllers/loginController');
 var cuentaController = new cuenta();
 
 
-
+var auth = function middleWare(req, res, next) {
+    if (req.isAuthenticated()) {
+        next();
+    } else {
+        
+    }
+};
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Tienda On Line' });
 });
 
 
-router.get('/admin', function (req, res, next) {
+router.get('/admin', auth, function (req, res, next) {
   res.render('registra', { title: 'Registro' , 
                 rol: req.user.rol});
 });
@@ -34,6 +40,13 @@ router.post('/sign_up/save', passport.authenticate('local-signup', {
   successRedirect: '/login',
   failureRedirect: '/sign_up'
 }));
+/**
+ * Log out
+ */
+router.get('/logout', (req, res) => {
+  req.logOut();
+  res.redirect('/');
+});
 /**
  * Facebook
  */
