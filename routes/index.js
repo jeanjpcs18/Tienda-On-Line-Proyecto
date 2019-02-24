@@ -3,6 +3,10 @@ var router = express.Router();
 var passport = require('passport');
 var cuenta = require('../controllers/loginController');
 var cuentaController = new cuenta();
+var carro = require('../controllers/CarritoController');
+var carrito = new carro();
+var venta = require('../controllers/VentaController');
+var ventaController = new venta();
 
 
 var auth = function middleWare(req, res, next) {
@@ -54,6 +58,16 @@ router.get('/logout', (req, res) => {
 router.get('/auth/facebook',
   passport.authenticate('facebook'));
 
+//carrito
+
+app.get('/compra/carrito/listado', auth,  carrito.mostrarCarrito);
+app.get('/compra/carrito/quitar/:external', auth,  carrito.quitar_item);
+app.get('/compra/carrito/agregar/:external', auth,  carrito.agregar_item);
+app.get('/compra/carrito/:external', auth,  carrito.cargarCarro);
+
+//venta
+app.get('/venta', auth,  ventaController.mostrarVenta);
+app.post('/venta/guardar', auth,  ventaController.guardar
 
 
 module.exports = router;

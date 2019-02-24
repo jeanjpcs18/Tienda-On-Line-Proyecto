@@ -8,23 +8,82 @@ html(lang='en')
         link(rel='stylesheet' href='/css/vendor/bootstrap/css/bootstrap.min.css')
         link(rel='stylesheet', href='css/shop-homepage.css')
         link(rel='stylesheet' href='css/estilos.css')
+        script(src='https://www.gstatic.com/firebasejs/5.8.2/firebase.js')
+        script.
+          // Initialize Firebase
+          var config = {
+          apiKey: "AIzaSyCijlIzb3eLEes_sqd7DGIbFrdY754M0d0",
+          authDomain: "vinos-2889e.firebaseapp.com",
+          databaseURL: "https://vinos-2889e.firebaseio.com",
+          projectId: "vinos-2889e",
+          storageBucket: "vinos-2889e.appspot.com",
+          messagingSenderId: "687912616285"
+          };
+          firebase.initializeApp(config);
+          var messaging = firebase.messaging();
+          messaging.requestPermission()
+          .then(function () {
+          console.log('Se han aceptado las notificaciones');
+          })
+          .catch(function (err) {
+          mensajeFeedback(err);
+          console.log('No se ha recibido permiso / token: ', err);
+          });
+        // ===============================================================================================
+        script(src='/javascripts/jquery.validate.min.js')
+        link(rel='stylesheet', href='/assets/css/slider_flex.css')
+        script.
+          function mostrarCantidad(data) {
+          var cant = 0;
+          var precio = 0;
+          $.each(data, function (i, item) {
+          cant += item.cant;
+          precio += item.pt;
+          });
+          $("#nro_items").html(cant + ' <b>$ ' + precio + '</b>');
+          console.log("se refresco");
+          }
+          function refrescar() {
+          var url = 'http://localhost:666/maria/compra/carrito/listado';
+          $.ajax({
+          url: url,
+          type: 'GET',
+          dataType: 'json',
+          success: function (data, textStatus, jqXHR) {
+          mostrarCantidad(data);
+          }, error: function (jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR);
+          }
+          });
+          }
+          $(document).ready(function () {
+          refrescar();
+          });
 
-    body
-        nav(class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top')
-            .container  
-                a(class='navbar-brand' href='#') Start Bootstrap
-                button(class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation') 
-                    span(class='navbar-toggler-icon')
-                #navbarResponsive(class='collapse navbar-collapse collapse')
-                    ul(class = 'navbar-nav ml-auto')
-                        li(class='nav-item active')
-                            a(class='nav-link' href='#') Home
-                        li(class='nav-item')
-                            a(href='/login' class='nav-link') Inicie
-                        li(class='nav-item')
-                            a(class='nav-link' href='#') Productos
-                        li(class='nav-item')
-                            a(class='nav-link' href='#') Nosotros
+    body.is-preload
+          #page-wrapper
+              // Header
+              header#header
+                nav(class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top')
+                    .container  
+                        a(class='navbar-brand' href='#') Start Bootstrap
+                        button(class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation') 
+                            span(class='navbar-toggler-icon')
+                        #navbarResponsive(class='collapse navbar-collapse collapse')
+                            ul(class = 'navbar-nav ml-auto')
+                                li(class='nav-item active')
+                                    a(class='nav-link' href='#') Home
+                                li(class='nav-item')
+                                    a(href='/login' class='nav-link') Inicie
+                                li(class='nav-item')
+                                    a(class='nav-link' href='#') Productos
+                                li(class='nav-item')
+                                    a(class='nav-link' href='#') Nosotros
+                span.icon.fa-cart-plus
+                  b   Nro Items    
+                  span#nro_items 0
+          
+          
         .container
             .content-page
                 .hidden-xs.content-carousel
@@ -48,6 +107,13 @@ html(lang='en')
                             span(class='sr-only') Next
       footer(class='py-5 bg-dark')
         .container
-            p(class='m-0 text-center text-white') Copyright &copy; Your Website 2019 
+            p(class='m-0 text-center text-white') Copyright &copy; Your Website 2019
+            //scripts
     script(src='css/vendor/jquery/jquery.min.js')
     script(src='css/vendor/bootstrap/js/bootstrap.bundle.min.js')
+    script(src='/assets/js/jquery.dropotron.min.js')
+    script(src='/assets/js/jquery.scrollex.min.js')
+    script(src='/assets/js/browser.min.js')
+    script(src='/assets/js/breakpoints.min.js')
+    script(src='/assets/js/util.js')
+    script(src='/assets/js/main.js')
