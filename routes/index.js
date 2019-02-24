@@ -38,7 +38,8 @@ router.post('/login/iniciar', passport.authenticate('local-signin', {
  */
 router.post('/sign_up/save', passport.authenticate('local-signup', {
   successRedirect: '/login',
-  failureRedirect: '/sign_up'
+  failureRedirect: '/sign_up',
+  failureFlash: true
 }));
 /**
  * Log out

@@ -1,4 +1,8 @@
 div(id="content")
+    if(error  != '')
+        div(class="alert alert-danger")
+             error    
+
     form(class="login-100-form validate-form" method="post" action="/login/iniciar")
     
         div(class="text-center p-t-55 p-b-30")
