@@ -23,8 +23,15 @@ var auth = function middleWare(req, res, next) {
         next();
     }
 };
+
+var auth2 = function middleWare(req, res, next) {
+  if (!req.isAuthenticated()) {
+      next();
+  }
+  res.redirect('/admin');
+};
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', auth2, function (req, res, next) {
   res.render('index', { title: 'Tienda On Line' });
 });
 router.get('/admin', auth, function (req, res, next) {
@@ -39,8 +46,8 @@ router.post('/guardarMarca', marcacontroler.guardar);
 router.get('/dir', ventaController.verdir);
 
 
-router.get('/login', cuentaController.verLogin);
-router.get('/sign_up', cuentaController.verRegistro);
+router.get('/login',auth2, cuentaController.verLogin);
+router.get('/sign_up', auth2, cuentaController.verRegistro);
 /**
  * Login
  */
