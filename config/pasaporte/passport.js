@@ -6,6 +6,7 @@ module.exports = function (passport, cuenta, persona, rol) {
     var Persona = persona;
     var Rol = rol;
     var LocalStrategy = require('passport-local').Strategy;
+    var FacebookStrategy = require('passport-facebook').Strategy;
     passport.serializeUser(function (cuenta, done) {
         console.log(done);
         done(null, cuenta.id);
