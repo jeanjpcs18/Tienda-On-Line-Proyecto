@@ -1,19 +1,19 @@
 var express = require('express');
 var router = express.Router();
-<<<<<<< HEAD
+
 var producto = require("../controlador/productocontroler");
 var productocontroler = new producto();
 var categoria = require('../controlador/categoriacontroler');
 var categoriacontroler = new categoria();
 var marca = require('../controlador/marcacontroler');
 var marcacontroler = new marca();
-=======
+
 var passport = require('passport');
 var cuenta = require('../controllers/loginController');
 var cuentaController = new cuenta();
 var venta = require('../controllers/VentaController');
 var ventaController = new venta();
->>>>>>> 99866a4efb08ea11008c2f953d818af67c405051
+
 
 var carro = require('../controllers/CarritoController');
 var carrito = new carro();
@@ -21,27 +21,23 @@ var carrito = new carro();
 var auth = function middleWare(req, res, next) {
     if (req.isAuthenticated()) {
         next();
-    } else {
-        
     }
 };
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Tienda On Line' });
 });
-
-
-<<<<<<< HEAD
-router.get('/admin', categoriacontroler.cargarVista);
-
-router.post('/guardarProducto', productocontroler.guardar);
-router.post('/guardarCategoria', categoriacontroler.guardar);
-router.post('/guardarMarca', marcacontroler.guardar);
-=======
 router.get('/admin', auth, function (req, res, next) {
   res.render('registra', { title: 'Registro' , 
                 rol: req.user.rol});
 });
+
+router.post('/guardarProducto', productocontroler.guardar);
+router.post('/guardarCategoria', categoriacontroler.guardar);
+router.post('/guardarMarca', marcacontroler.guardar);
+
+router.get('/dir', ventaController.verdir);
+
 
 router.get('/login', cuentaController.verLogin);
 router.get('/sign_up', cuentaController.verRegistro);
@@ -68,11 +64,7 @@ router.get('/logout', (req, res) => {
   req.logOut();
   res.redirect('/');
 });
-/**
- * Facebook
- */
-router.get('/auth/facebook',
-  passport.authenticate('facebook'));
+
 /**
  * carrito
  */
@@ -86,7 +78,5 @@ router.get('/carrito/:external', carrito.cargarCarro);
 router.get('/venta', ventaController.mostrarVenta);
 router.post('/venta/guardar', ventaController.guardar);
 
->>>>>>> 99866a4efb08ea11008c2f953d818af67c405051
 
 module.exports = router;
-
