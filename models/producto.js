@@ -8,6 +8,9 @@ module.exports = function (sequelize, Sequelize) {
             primaryKey: true,
             type: Sequelize.INTEGER
         },
+        codigo:{
+            type: Sequelize.STRING(6)
+        },
         nombre: {
             type: Sequelize.STRING(255)
         },
@@ -16,6 +19,15 @@ module.exports = function (sequelize, Sequelize) {
         },
         existencia:{
             type: Sequelize.INTEGER
+        },
+        precio:{
+            type: Sequelize.FLOAT
+        },
+        modelo:{
+            type: Sequelize.STRING(15)
+        },
+        imagen:{
+            type: Sequelize.STRING
         },
         external_id: {
             type: Sequelize.UUID
