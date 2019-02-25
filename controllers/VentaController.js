@@ -9,7 +9,7 @@ class VentaController {
     mostrarVenta(req, res) {
         res.render('template_admin',
                 {titulo: "Venta",
-                    fragmento: 'fragmentos/carrito/frm_venta',
+                    fragmento: 'fragmentos/frm_venta',
                     rol: req.user.rol
                 });
     }
