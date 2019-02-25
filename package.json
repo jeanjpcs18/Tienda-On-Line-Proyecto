@@ -11,22 +11,11 @@
     "debug": "~2.6.9",
     "dotenv": "^6.2.0",
     "express": "~4.16.0",
-<<<<<<< HEAD
     "formidable": "^1.2.1",
-=======
-    "express-flash": "0.0.2",
-    "express-session": "^1.15.6",
->>>>>>> 99866a4efb08ea11008c2f953d818af67c405051
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
     "mysql2": "^1.6.4",
-<<<<<<< HEAD
-=======
-    "passport": "^0.4.0",
-    "passport-facebook": "^3.0.0",
-    "passport-local": "^1.0.0",
->>>>>>> 99866a4efb08ea11008c2f953d818af67c405051
     "sequelize": "^4.42.0",
     "uuid": "^3.3.2"
   }

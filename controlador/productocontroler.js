@@ -23,6 +23,7 @@ class productoController{
                 var modeloProducto = {
                     codigo: fields.codigoProducto,
                     nombre: fields.nombreProducto,
+                    marca: fields.marcaPoducto,
                     caracteristicas: fields.descripcionProducto,
                     existencia: fields.existencia,
                     precio: fields.precioProducto,

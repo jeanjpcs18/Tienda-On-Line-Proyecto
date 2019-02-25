@@ -14,6 +14,9 @@ module.exports = function (sequelize, Sequelize) {
         nombre: {
             type: Sequelize.STRING(255)
         },
+        marcas:{
+            type: Sequelize.STRING(255)
+        },
         caracteristicas:{
             type: Sequelize.STRING(255)
         },
