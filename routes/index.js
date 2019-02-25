@@ -3,11 +3,11 @@ var router = express.Router();
 var passport = require('passport');
 var cuenta = require('../controllers/loginController');
 var cuentaController = new cuenta();
-var carro = require('../controllers/CarritoController');
-var carrito = new carro();
 var venta = require('../controllers/VentaController');
 var ventaController = new venta();
 
+var carro = require('../controllers/CarritoController');
+var carrito = new carro();
 
 var auth = function middleWare(req, res, next) {
     if (req.isAuthenticated()) {
@@ -57,17 +57,19 @@ router.get('/logout', (req, res) => {
  */
 router.get('/auth/facebook',
   passport.authenticate('facebook'));
-
-//carrito
-
-app.get('/compra/carrito/listado', auth,  carrito.mostrarCarrito);
-app.get('/compra/carrito/quitar/:external', auth,  carrito.quitar_item);
-app.get('/compra/carrito/agregar/:external', auth,  carrito.agregar_item);
-app.get('/compra/carrito/:external', auth,  carrito.cargarCarro);
-
-//venta
-app.get('/venta', auth,  ventaController.mostrarVenta);
-app.post('/venta/guardar', auth,  ventaController.guardar
+/**
+ * carrito
+ */
+router.get('/carrito/listado', carrito.mostrarCarrito);
+router.get('/carrito/quitar/:external', carrito.quitar_item);
+router.get('/carrito/agregar/:external', carrito.agregar_item);
+router.get('/carrito/:external', carrito.cargarCarro);
+/**
+ * ventas
+ */
+router.get('/venta', ventaController.mostrarVenta);
+router.post('/venta/guardar', ventaController.guardar);
 
 
 module.exports = router;
+
