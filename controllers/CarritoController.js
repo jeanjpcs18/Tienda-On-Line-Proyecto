@@ -1,5 +1,5 @@
 'use strict';
-var models = require('./models');
+var models = require('./../models');
 var Producto = models.producto;
 var Marca = models.marca;
 var Categoria = models.categoria;
