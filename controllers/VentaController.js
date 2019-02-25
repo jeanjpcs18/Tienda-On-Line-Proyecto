@@ -6,6 +6,9 @@ var Persona = models.persona;
 var Venta = models.venta;
 var Detalle = models.detalleVenta;
 class VentaController {
+    verdir(req, res){
+        res.render('direccion');
+    }
     mostrarVenta(req, res) {
         res.render('template_admin',
                 {titulo: "Venta",
