@@ -44,7 +44,7 @@ html(lang='en')
           console.log("se refresco");
           }
           function refrescar() {
-          var url = 'http://localhost:666/maria/compra/carrito/listado';
+          var url = 'http://localhost:3000/compra/carrito/listado';
           $.ajax({
           url: url,
           type: 'GET',
@@ -74,7 +74,7 @@ html(lang='en')
                                 li(class='nav-item active')
                                     a(class='nav-link' href='#') Home
                                 li(class='nav-item')
-                                    a(href='/login' class='nav-link') Inicie
+                                    a(href='/login' class='nav-link') Inicie sesion
                                 li(class='nav-item')
                                     a(class='nav-link' href='#') Productos
                                 li(class='nav-item')
