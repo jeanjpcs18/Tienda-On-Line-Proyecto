@@ -23,7 +23,7 @@ class productoController{
                 var modeloProducto = {
                     codigo: fields.codigoProducto,
                     nombre: fields.nombreProducto,
-                    marca: fields.marcaPoducto,
+                    marcas: fields.marcaPoducto,
                     caracteristicas: fields.descripcionProducto,
                     existencia: fields.existencia,
                     precio: fields.precioProducto,
@@ -31,6 +31,7 @@ class productoController{
                     imagen: fields.imagen,
                     external_id: uuid() 
                 };
+                console.log(modeloProducto);
                 Producto.create(modeloProducto).then(function (newProducto){
                     if(!newProducto){
                         console.log('No se ha guardado');

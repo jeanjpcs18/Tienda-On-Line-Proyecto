@@ -4,7 +4,7 @@ var createError = require('http-errors');
 var bodyParser=require('body-parser');
 
 var express = require('express');
-var flash = require('express-flash');
+var flash = require('connect-flash');
 var session = require('express-session');
 var path = require('path');
 var cookieParser = require('cookie-parser');
